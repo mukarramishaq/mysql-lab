@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: mysql-primary
+    static_configs:
+      - targets: ['mysqld-exporter-primary:9104']
+
+  - job_name: mysql-replica
+    static_configs:
+      - targets: ['mysqld-exporter-replica:9104']
